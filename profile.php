@@ -23,7 +23,7 @@ if ($_SESSION['uname'] AND $_SESSION['type']) {
 </head>
 <body>
   <center>
-    <table>
+    <table border="1">
       <tr>
         <td colspan="2" align="center"> Profile</td>
       </tr>
@@ -57,7 +57,7 @@ if ($_SESSION['uname'] AND $_SESSION['type']) {
 }
 else
 {
-
+  header('Location:login.php?msg=Must login for aceess');
 }
 ?>
 

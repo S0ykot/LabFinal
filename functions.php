@@ -31,6 +31,17 @@ function profile($username,$type)
   $conn = getConnection();
   $query = "SELECT * FROM users WHERE uid='{$username}' AND type='{$type}'";
   $result = mysqli_query($conn,$query);
+  return $result;
 }
+
+function users_details()
+{
+  $conn = getConnection();
+  $query = "SELECT * FROM users";
+  $result = mysqli_query($conn,$query);
+  return $result;
+}
+
+
 
 ?>
