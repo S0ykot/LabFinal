@@ -1,14 +1,52 @@
-<!DOCTYPE html>
+<?php
+error_reporting(0);
+session_start();
+
+if ($_SESSION['uname'] AND $_SESSION['type']=='admin') {
+
+
+?>
+
+
+
+
 <html>
 <head>
   <title>Home</title>
 </head>
 <body>
 <center>
-    <h1>Welcome</h1>
-    <a href="profile.php">Profile</a>
-    <a href="changepass.php">Change Password</a>
-    <a href="viewusers.php">View Users</a>
+    <h1>Welcome <?=$_SESSION['uname'];?></h1>
+    <a href="profile.php">Profile</a><br>
+    <a href="changepass.php">Change Password</a><br>
+    <a href="viewusers.php">View Users</a><br>
+    <a href="logout.php">Logout</a>
+</center>
+</body>
+</html>
+
+
+<?php
+
+}
+elseif ($_SESSION['uname'] AND $_SESSION['type']=='user') 
+
+{
+
+
+?>
+
+
+
+<html>
+<head>
+  <title>Home</title>
+</head>
+<body>
+<center>
+    <h1>Welcome <?=$_SESSION['uname'];?></h1>
+    <a href="profile.php">Profile</a><br>
+    <a href="changepass.php">Change Password</a><br>
     <a href="logout.php">Logout</a>
 </center>
 </body>
@@ -16,18 +54,11 @@
 
 
 
+<?php
+}
+else
+{
+  header('Location:login.php?msg=Must login for aceess');
+}
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Home</title>
-</head>
-<body>
-<center>
-    <h1>Welcome</h1>
-    <a href="profile.php">Profile</a>
-    <a href="changepass.php">Change Password</a>
-    <a href="logout.php">Logout</a>
-</center>
-</body>
-</html>
+?>

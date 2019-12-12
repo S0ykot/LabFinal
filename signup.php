@@ -13,10 +13,10 @@ if ($_GET['msg']) {
 	<title>Reg</title>
 </head>
 <body>
-<h3><?=$msg;?>></h3>
+<h3><?=$msg;?></h3>
 <fieldset>
 	<legend>REGISTRATION</legend>
-	<form>
+	<form method="POST" action="a_signup.php">
 		<table>
 			<tr><td>
 				ID <br>
@@ -24,24 +24,24 @@ if ($_GET['msg']) {
 			</td></tr>
 			<tr><td>
 				Password <br>
-				<input type="password" name="pass1">
+				<input type="password" name="pass1" id="pass1">
 			</td></tr>
 			<tr><td>
 				Confirm Password <br>
-				<input type="password" name="pass2">
+				<input type="password" name="pass2" id="pass2">
 			</td></tr>
 			<tr><td>
 				Name <br>
-				<input type="text" name="name">
+				<input type="text" name="name" id="name">
 			</td></tr>
 			<tr><td>
 				Email <br>
-				<input type="text" name="email">
+				<input type="text" name="email" id="email">
 			</td></tr>
 			<tr><td>
 				User Type [Users/Admin]<br>
-				<select name="type">
-					<option value="users">Users</option>
+				<select name="type" id="type">
+					<option value="user">Users</option>
 					<option value="admin">Admin</option>
 				</select>
 			</td></tr>
@@ -49,7 +49,7 @@ if ($_GET['msg']) {
 				<hr>
 			</td></tr>
 			<tr><td>
-				<input type="button" name="submit" value="Register"> <a href="login.php">Login</a>
+				<input type="submit" name="submit" value="Register"> <a href="login.php">Login</a>
 			</td></tr>
 		</table>
 	</form>

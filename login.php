@@ -6,7 +6,7 @@
 <body>
 <fieldset>
   <legend>LOGIN</legend>
-  <form>
+  <form method="POST" action="a_login.php">
     <table>
       <tr><td>
         User Id <br>
@@ -23,7 +23,7 @@
         <hr>
       </td></tr>
       <tr><td>
-        <input type="button" name="login" value="Login"> <a href="reg.php">Register</a>
+        <input type="submit" name="login" value="Login"> <a href="signup.php">Register</a>
       </td></tr>
     </table>
   </form>

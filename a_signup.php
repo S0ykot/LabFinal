@@ -1,10 +1,9 @@
 <?php 
 
-error_reporting(0);
 require_once 'functions.php';
 
 
-if ($_POST['submit']) {
+if (isset($_POST['submit'])) {
   $uid = $_POST['id'];
   $pass = $_POST['pass1'];
   $email = $_POST['email'];
@@ -12,14 +11,20 @@ if ($_POST['submit']) {
   $type = $_POST['type'];
 
 
-$status = signup($uid,$pass,$name,$type);
-if ($status) {
-    header('signup.php?msg=Success'); 
+if (empty($uid) || empty($pass) || empty($email) || empty($name) || empty($type)) {
+  
 }
-
 else
 {
-    header('signup.php?msg=failed');
+        $status = signup($uid,$pass,$name,$email,$type);
+      if ($status) {
+          header('location:signup.php?msg=Success'); 
+      }
+
+      else
+      {
+          header('location:signup.php?msg=failed');
+      }
 }
 
 }
